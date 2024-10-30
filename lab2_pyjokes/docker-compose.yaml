@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+   en_jokes:
+     build: ./en_jokes
+     ports:
+     - "5001:5000"
+   es_jokes:
+     build: ./es_jokes
+     ports:
+     - "5002:5000"
+   nginx:
+     build: ./nginx
+     ports:
+     - "8080:80"
+     depends_on:
+     - en_jokes
+     - es_jokes
