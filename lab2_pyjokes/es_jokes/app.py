@@ -15,6 +15,7 @@ def hello_world():
 @app.route("/joke", methods=["GET"])
 def joke():
 	joke = pyjokes.get_joke("es")
+	#joke = "... got nothing in spanish either"
 	retDict= {}
 	retDict['joke'] = joke
 	return json.dumps(retDict)

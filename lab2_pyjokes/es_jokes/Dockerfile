@@ -1,7 +1,7 @@
 FROM python:3
 COPY ./requirements.txt /requirements.txt
 WORKDIR /
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --break-system-packages
 COPY . /
-ENTRYPOINT [ "python3" ]
+ENTRYPOINT [ "python" ]
 CMD [ "app.py" ]

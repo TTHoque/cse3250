@@ -23,7 +23,7 @@ def hello_world():
 #
 # curl -v -H "Content-Type: application/json" -d "{\"heads\":6 }" -X POST "http://localhost:5000/compute"
 #
-@app.route("/joke", methods=['GET'])
+@app.route("/joke", methods=['GET', 'POST'])
 def store_score():
     myData = request.json
     print(str(request.json))
